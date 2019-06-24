@@ -1,0 +1,13 @@
+{
+    "type": "mssql",
+    "host": "xmeta.life",
+    "port": 1433,
+    "username": "sa",
+    "password": "p@$$vv0rd",
+    "database": "izer",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+      "src/**/models/*.ts"
+    ]
+  }
