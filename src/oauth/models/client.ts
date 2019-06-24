@@ -6,10 +6,10 @@ import { IsUrl, Length } from "class-validator";
 @Entity({ schema: 'auth', name: 'clients' })
 export class Client {
 
-    @PrimaryColumn({ name: 'id', length: 80, nullable: false, default: () => "newid()" })
+    @PrimaryColumn({ name: 'id', length: 80, nullable: false, default: () => "gen_random_uuid()" })
     id: string;
 
-    @Column({ name: 'secret', length: 80, nullable: false, default: () => "newid()" })
+    @Column({ name: 'secret', length: 80, nullable: false, default: () => "gen_random_uuid()" })
     secret: string;
 
     @ApiModelProperty({ type: String, description: 'Name of the client(application)', required: true })
@@ -46,7 +46,7 @@ export class Client {
     @Column({ name: 'refresh_token_lifetime', nullable: false, default: 7200 })
     refreshTokenLifetime: number;
 
-    @Column({ type: 'timestamp', name: 'created_on', nullable: false, default: () => 'getdate()' })
+    @Column({ type: 'timestamp', name: 'created_on', nullable: false, default: () => 'now()' })
     createdOn: Date;
 
 }

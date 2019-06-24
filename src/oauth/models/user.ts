@@ -6,7 +6,7 @@ import {ApiModelProperty} from "@nestjs/swagger";
 @Entity({schema: 'auth', name: 'users'})
 export class User extends BaseEntity  {
 
-    @PrimaryColumn({nullable: false, primary: true, length: 80, default: () => "newid()"})
+    @PrimaryColumn({nullable: false, primary: true, length: 80, default: () => "gen_random_uuid()"})
     id: string;
 
     @ApiModelProperty({type: String, description: 'User email', required: true})

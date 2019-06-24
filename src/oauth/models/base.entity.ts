@@ -2,7 +2,7 @@ import { Column } from "typeorm";
 
 export abstract class BaseEntity {
 
-    @Column('timestamp', { name: 'created_on', nullable: false, default: () => 'getdate()' })
+    @Column('timestamp', { name: 'created_on', nullable: false, default: () => 'date()' })
     createdOn: Date;
 
     @Column('timestamp', { name: 'last_update', nullable: true })

@@ -10,7 +10,7 @@ export class AccessToken {
         primary: true,
         nullable: false,
         length: 80,
-        default: () => "newid()"
+        default: () => "gen_random_uuid()"
     })
     accessToken: string;
 
@@ -19,7 +19,7 @@ export class AccessToken {
         unique: true,
         nullable: false,
         length: 80,
-        default: () => "newid()"
+        default: () => "gen_random_uuid()"
     })
     refreshToken: string;
 
@@ -47,7 +47,7 @@ export class AccessToken {
     scope: string;
 
 
-    @Column('timestamp', {name: 'created_on', nullable: false, default: () => 'getdate()'})
+    @Column('timestamp', {name: 'created_on', nullable: false, default: () => 'now()'})
     createdOn: Date;
 
     @Column({name: 'created_from', nullable: true})

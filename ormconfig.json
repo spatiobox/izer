@@ -1,8 +1,8 @@
 {
-    "type": "mssql",
+    "type": "mysql",
     "host": "xmeta.life",
-    "port": 1433,
-    "username": "sa",
+    "port": 3306,
+    "username": "root",
     "password": "p@$$vv0rd",
     "database": "izer",
     "synchronize": true,
